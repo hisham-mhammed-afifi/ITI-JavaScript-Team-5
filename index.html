@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- ===== Google fonts ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- =====  fontawesome icons  ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ===== Custom CSS ===== -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- #######################  HEADER  ######################### -->
+      <nav class="container">
+        <ul class="nav-bar">
+          <li class="nav-item">
+            <p class="logo"><span>OUR</span>Store</p>
+          </li>
+          <li id="dropDownBtn" class="nav-item">
+            <p>Categories <i class="fas fa-sort-down"></i></p>
+            <!-- ------------ -->
+          </li>
+          <li class="nav-item search">
+            <input id="searchBox" type="text" placeholder="Search" />
+          </li>
+          <li onclick="openCartMenu(event)" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartBadge"></span>
+          </li>
+          <li id="userEmail" onclick="openLoginModal()" class="nav-item">
+            Login
+            <i class="fas fa-user"></i>
+          </li>
+          <li id="logout" onclick="openSignupModal()" class="nav-item">
+            Sign Up
+            <i class="fas fa-sign-in-alt"></i>
+          </li>
+        </ul>
+
+        <!-- #######################  dropdown List start  ######################### -->
+
+        <div class="dropdown-list">
+          <ul id="dropList"></ul>
+        </div>
+        <!-- #######################  dropdown List end    ######################### -->
+        <!-- #######################  search List start  ######################### -->
+
+        <div class="search-list">
+          <ul id="searchList"></ul>
+        </div>
+        <!-- #######################  search List end    ######################### -->
+      </nav>
+
+      <!-- #######################  HERO SECTION  ######################### -->
+
+      <div id="productsContainer" class="all-cards container">
+        <div class="slider container">
+          <div class="slider-card">
+            <img
+              src="./images/carousel-image-1.jpg"
+              alt="carousel"
+              class="slider-image"
+            />
+            <div class="slider-text">
+              <h2>Start Shopping From here</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Eligendi quis accusantium nobis quos vel ut, nam doloribus ab
+                illo consequatur!
+              </p>
+            </div>
+          </div>
+          <div class="slider-card">
+            <img
+              src="./images/carousel-image-2.jpg"
+              alt="carousel"
+              class="slider-image"
+            />
+            <div class="slider-text">
+              <h2 class="slider-white">Start Shopping From here</h2>
+              <p class="slider-white">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Eligendi quis accusantium nobis quos vel ut, nam doloribus ab
+                illo consequatur!
+              </p>
+            </div>
+          </div>
+          <div class="slider-card">
+            <img
+              src="./images/carousel-image-3.jpg"
+              alt="carousel"
+              class="slider-image"
+            />
+            <div class="slider-text">
+              <h2 class="slider-orange">Start Shopping From here</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- #######################  New Arrivals  ######################### -->
+
+    <section class="container">
+      <h2 class="section-title">New Arrivals</h2>
+      <i id="scrollingLeft" class="fas fa-arrow-left"></i>
+      <i id="scrollingRight" class="fas fa-arrow-right"></i>
+
+      <div id="scrollRow">
+        <div id="scrollContainer" class="cards"></div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- #######################  Company features  ######################### -->
+    <seaction class="container">
+      <h2 class="section-title">Features</h2>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-anchor"></i>
+          <h3>Quality</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            sint.
+          </p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-tachometer-alt"></i>
+          <h3>Helpful</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            sint.
+          </p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-chart-line"></i>
+          <h3>Efficient</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            sint.
+          </p>
+        </div>
+      </div>
+    </seaction>
+    <div class="divider"></div>
+
+    <!-- #######################  Fooooooooter  ######################### -->
+    <footer>
+      <div class="container footer-section">
+        <div><span>OUR</span>Store</div>
+        <div>
+          <ul>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>Follow us</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>123 west el-balad st.</li>
+            <li>Nasr-city, Cairo</li>
+            <li>Egypt</li>
+          </ul>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><i class="fab fa-facebook-square"></i></li>
+            <li><i class="fab fa-instagram-square"></i></li>
+            <li><i class="fab fa-linkedin"></i></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- #######################  cart menu start  ######################### -->
+
+    <div id="cartMenu">
+      <span class="close-btn" onclick="closeCartMenu()">x</span>
+      <div class="cartMenu-body">
+        <!-- list of products in the cart -->
+        <ul id="cartList"></ul>
+      </div>
+
+      <div class="cartMenu-footer">
+        <div class="divider"></div>
+        <div class="total-price">
+          <p><strong>TOTAL:</strong> <span id="totalPrice"></span></p>
+        </div>
+      </div>
+    </div>
+    <!-- #######################  cart menu end    ######################### -->
+
+    <!-- #######################  Signup Modal start  ######################### -->
+
+    <div id="signupModal">
+      <div onclick="event.stopPropagation()" id="signupModalWindow">
+        <!-- >>>>>>>>>>>sign up form<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <form id="signupForm">
+          <div class="form-input">
+            <label for="name" class="form-label">Name</label>
+            <input
+              id="first-name"
+              name="firstName"
+              type="text"
+              class="form-control"
+              onblur="handleNameValidation(event)"
+            />
+            <div class="feedbackMsg" id="first-name-feedback"></div>
+          </div>
+          <!-- ------------------------------------------------------- -->
+          <div class="form-input">
+            <label for="email" class="form-label">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              onblur="handleEmailValidation(event)"
+            />
+            <div class="feedbackMsg" id="email-feedback"></div>
+          </div>
+          <!-- ------------------------------------------------------- -->
+          <div class="form-input">
+            <label for="password" class="form-label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-control"
+              onblur="handlePasswordInputBlur(event)"
+            />
+            <div class="feedbackMsg" id="password-feedback"></div>
+          </div>
+          <!-- ------------------------------------------------------- -->
+          <div class="form-input">
+            <label for="confirm-password" class="form-label"
+              >Confirm password</label
+            >
+            <input
+              id="confirm-password"
+              type="password"
+              class="form-control"
+              onblur="handleConfirmPasswordInputBlur(event)"
+            />
+            <div class="feedbackMsg" id="confirm-password-feedback"></div>
+          </div>
+          <input id="signupBtn" type="submit" value="SIGN UP" />
+        </form>
+      </div>
+    </div>
+    <!-- #######################  Signup Modal end    ######################### -->
+    <!-- #######################  Login Modal start  ######################### -->
+
+    <div id="loginModal">
+      <div onclick="event.stopPropagation()" id="loginModalWindow">
+        <span id="wrong"></span>
+        <!-- >>>>>>>>>>>sign up form<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <form id="loginForm">
+          <!-- ------------------------------------------------------- -->
+          <div class="form-input">
+            <label for="email" class="form-label">Email</label>
+            <input
+              id="loginEmail"
+              name="email"
+              type="email"
+              class="form-control"
+              onblur="handleLoginEmailValidation(event)"
+            />
+            <div class="feedbackMsg" id="loginEmail-feedback"></div>
+          </div>
+          <!-- ------------------------------------------------------- -->
+          <div class="form-input">
+            <label for="password" class="form-label">Password</label>
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              class="form-control"
+              onblur="handleLoginPasswordInputBlur(event)"
+            />
+            <div class="feedbackMsg" id="loginPassword-feedback"></div>
+          </div>
+          <!-- ------------------------------------------------------- -->
+
+          <input id="loginBtn" type="submit" value="LOGIN" disapled />
+        </form>
+      </div>
+    </div>
+    <!-- #######################  Login Modal end    ######################### -->
+    <!-- ---------------------------------------------------------------- -->
+    <!-- -------------------------scripts-------------------------------- -->
+    <!-- ---------------------------------------------------------------- -->
+
+    <script src="./scripts/elements.js"></script>
+    <script src="./scripts/XHRequest.js"></script>
+    <script src="./scripts/categories-list.js"></script>
+    <script src="./scripts/products-list.js"></script>
+    <script src="./scripts/horizontal-scrolling.js"></script>
+    <script src="./scripts/products-localstorage.js"></script>
+    <script src="./scripts/search-box.js"></script>
+    <script src="./scripts/validate-form.js"></script>
+    <script src="./scripts/image-slider.js"></script>
+    <script src="./scripts/modal.js"></script>
+    <script src="./scripts/cart-menu.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

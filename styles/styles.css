@@ -1,0 +1,508 @@
+@import "./normaliz.css";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #444;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h1 {
+  font-size: 5.653rem;
+}
+
+h2 {
+  font-size: 3.998rem;
+  line-height: 4rem;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+label {
+  font-size: 1.3rem;
+  display: block;
+  padding: 0 5px;
+  margin: 10px 0;
+}
+
+input:focus {
+  border: 1px solid dodgerblue;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(30, 143, 255, 0.5);
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+input[type="button"],
+input[type="submit"] {
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+form {
+  margin: 0 auto;
+}
+
+span {
+  font-weight: 400;
+  color: tomato;
+}
+
+strong {
+  margin-right: 50px;
+}
+
+img {
+  object-fit: cover;
+}
+
+i {
+  padding: 0 10px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  general styles <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-title {
+  color: #444;
+  text-align: center;
+  padding: 50px 0 20px;
+}
+
+.divider {
+  max-width: 320px;
+  height: 2px;
+  border-radius: 2.5px;
+  background-color: lightgray;
+  margin: 50px auto;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  nav bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item {
+  cursor: pointer;
+  flex-shrink: 1;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search {
+  flex-grow: 1;
+}
+
+.logo {
+  font-size: 2.5rem;
+}
+
+#searchBox {
+  width: 100%;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  hero section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
+}
+
+.slider-card {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+
+.slider-image {
+  width: 100%;
+}
+.slider-text {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 360px;
+}
+
+.slider-orange {
+  color: orange;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.slider-white {
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  cart menu section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+#cartMenu {
+  width: 400px;
+  height: 100vh;
+  padding: 10px;
+  background-color: #fff;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  transform: translateX(400px);
+  transition: all 0.5s ease-in-out;
+}
+
+#cartBadge {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  top: -8px;
+  left: 25px;
+  width: 17px;
+  height: 20px;
+  border-radius: 100%;
+  color: #fff;
+  background-color: tomato;
+}
+
+#cartBadge:empty {
+  display: none;
+}
+
+.cartMenu-body {
+  width: 100%;
+  padding: 20px;
+
+  z-index: 9999;
+}
+
+.cartMenu-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.total-price {
+  font-size: 3rem;
+  padding-left: 20px;
+}
+
+.product-details,
+.qty-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-details {
+  width: 200px;
+}
+
+.qty-control {
+  align-items: center;
+}
+
+.close-btn {
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 10px;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  dropdown list section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.dropdown-list {
+  width: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 60px;
+  left: 155px;
+  display: none;
+  z-index: 9999;
+}
+
+.drop-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  search list section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.search-list {
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 60px;
+  left: 300px;
+  display: block;
+  z-index: 9999;
+}
+
+.drop-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid lightgray;
+}
+.drop-item:last-child {
+  border: none;
+}
+
+.search-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  Modal section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+#signupModal,
+#loginModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+#signupModalWindow,
+#loginModalWindow {
+  width: 375px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  opacity: 0;
+  z-index: 9999;
+
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  Form section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.form-input {
+  height: 8.5rem;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+#signupBtn,
+#loginBtn {
+  margin: 15px;
+}
+
+/* //\\//\\//\\//\\//\\//\\//\\ VALIDATION //\\//\\//\\//\\//\\//\\//\\//\\ */
+
+.valid-border {
+  border: 1px solid green;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+.invalid-border {
+  border: 1px solid red;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.valid-feedback {
+  padding: 0 5px;
+  margin-top: 5px;
+  color: green;
+}
+
+.invalid-feedback {
+  padding: 0 5px;
+  margin-top: 5px;
+  color: red;
+}
+
+.feedbackMsg {
+  font-size: 1.2rem;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  Company features section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.features {
+  margin: 0 auto;
+  width: 1024px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.feature {
+  width: 200px;
+  text-align: center;
+}
+
+.feature i {
+  font-size: 4rem;
+  padding-bottom: 10px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  new arrivals section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+#scrollingLeft,
+#scrollingRight {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  padding-top: 10px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#scrollingLeft {
+  left: 0;
+}
+#scrollingRight {
+  right: 0;
+}
+
+#scrollRow {
+  overflow: hidden;
+}
+
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  height: 400px;
+  padding: 0 10px;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+/* >>>>>>>>>  all products section <<<<<<<<<<< */
+
+.mini-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto 50px;
+  max-width: 768px;
+}
+
+.active {
+  color: tomato;
+  border-bottom: 2px solid tomato;
+}
+
+.all-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.all-cards .card {
+  margin: 50px 0 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>  Fooooooter section <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+footer {
+  color: #fff;
+  background-color: #333;
+  margin-top: 50px;
+}
+.footer-section {
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
+footer li {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "name": "Blouse",
+      "id": 1
+    },
+    {
+      "name": "Skirts",
+      "id": 2
+    },
+    {
+      "name": "Shoes",
+      "id": 3
+    },
+    {
+      "name": "T-shirts",
+      "id": 4
+    },
+    {
+      "name": "Trousers",
+      "id": 5
+    },
+    {
+      "name": "Watches",
+      "id": 6
+    },
+    {
+      "name": "Dresses",
+      "id": 7
+    }
+  ]
+}
